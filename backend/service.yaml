@@ -10,6 +10,6 @@ spec:
     - name: 80-tcp
       protocol: TCP
       port: 80
-      targetPort: 8080
+      targetPort: 9004
   selector:
     app: backend
