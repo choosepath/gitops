@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ui-configmap
+data:
+  nextTelemetry: "1"
+  forceColor: "1"
+  next-auth-url: "http://localhost:3000"
+  next-auth-secret: "1h3ALC6cWwiKa56tJFySMnLWVckOz1qI96MJHf0/BMs="
