@@ -18,6 +18,7 @@ spec:
       containers:
         - name: ui
           image: ui-image
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
           env:
