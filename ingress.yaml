@@ -10,20 +10,35 @@ spec:
     - host: choosepath.org
       http:
         paths:
-          - path: /api
-            pathType: Prefix
-            backend:
-              service:
-                name: backend-service
-                port:
-                  number: 8080
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: ui-service
-                port:
-                  number: 3000
+        - path: /api
+          pathType: Prefix
+          backend:
+            service:
+              name: backend-service
+              port:
+                number: 8080
+        - path: /oauth2
+          pathType: Prefix
+          backend:
+            service:
+              name: backend-service
+              port:
+                number: 8080
+        - path: /login
+          pathType: Prefix
+          backend:
+            service:
+              name: backend-service
+              port:
+                number: 8080
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: ui-service
+              port:
+                number: 3000
+
   tls:
     - hosts:
         - choosepath.org

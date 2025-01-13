@@ -25,3 +25,6 @@ spec:
             - name: DB_URL
               value: db:5432/choosepathdb
 
+            - name: APP_BASE_URL
+              value: "https://choosepath.org"
+
