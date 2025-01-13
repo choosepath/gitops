@@ -3,37 +3,28 @@ kind: Ingress
 metadata:
   name: choosepath-ing
   annotations:
-    ingress.kubernetes.io/ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/enable-underscores-in-headers: true
-    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
-    nginx.ingress.kubernetes.io/proxy-read-timeout: 3600
-    nginx.ingress.kubernetes.io/proxy-send-timeout: 3600
-    nginx.ingress.kubernetes.io/websocket-services: ui-svc
-    nginx.org/websocket-services: ui-svc
-    nginx.org/enable-underscores-in-headers: true
-    nginx.ingress.kubernetes.io/proxy-body-size: 50m
-    nginx.org/client-max-body-size: 50m
-    nginx.org/use-gzip: true
-    nginx.ingress.kubernetes.io/use-gzip: true
-    nginx.ingress.kubernetes.io/gzip: "on"
-    nginx.org/gzip: on
-    nginx.org/gzip_types: "application/json text/css text/html text/javascript text/html application/vnd.ms-fontobject application/x-font-ttf font/opentype font/eot font/otf font/ttf font/woff2"
-    nginx.ingress.kubernetes.io/gzip_types: "application/json text/css text/html text/javascript text/html application/vnd.ms-fontobject application/x-font-ttf font/opentype font/eot font/otf font/ttf font/woff2"
-    nginx.org/gzip_min_length: 256
-    nginx.ingress.kubernetes.io/gzip_min_length: 256
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
 spec:
-  ingressClassName: nginx
   rules:
-    - http:
+    - host: choosepath.org
+      http:
         paths:
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: backend-service
+                port:
+                  number: 8080
           - path: /
             pathType: Prefix
             backend:
               service:
                 name: ui-service
                 port:
-                  name: 80-tcp
-      host: choosepath.ddns.net
+                  number: 3000
   tls:
     - hosts:
-        - choosepath.ddns.net
+        - choosepath.org
+      secretName: choosepath-org-tls
