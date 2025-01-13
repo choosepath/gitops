@@ -11,5 +11,5 @@ data:
   google-maps-api-key: "AIzaSyCrFkoy3GLop2K12MeTHY0hwwvj8M_LToY"
 
   #  auth api
-  auth-service-url: "https://choosepath.org"
-  backend-service-url: "http://backend-service:8080"
+  auth-service-url: "http://backend-service"
+  backend-service-url: "http://backend-service"
