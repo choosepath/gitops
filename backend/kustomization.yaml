@@ -3,7 +3,7 @@ kind: Component
 
 images:
   - name: backend-image
-    newName: pavloskomple/test-backend
+    newName: pavloskomple/backend
     newTag: v1.0
 
 resources:
