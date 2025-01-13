@@ -22,5 +22,5 @@ spec:
             - containerPort: 8080
           env:
             - name: DB_URL
-              value: db
+              value: db:5432/choosepathdb
 
