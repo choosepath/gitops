@@ -20,4 +20,7 @@ spec:
           image: backend-image
           ports:
             - containerPort: 8080
+          env:
+            - name: DB_URL
+              value: db
 
