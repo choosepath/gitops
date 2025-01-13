@@ -67,4 +67,4 @@ spec:
             valueFrom:
               configMapKeyRef:
                 name: common-configmap
-                key: project-service-url
+                key: backend-service-url
