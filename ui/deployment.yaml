@@ -48,7 +48,7 @@ spec:
             - name: NEXTAUTH_URL
               valueFrom:
                 configMapKeyRef:
-                  name: ui-configmap
+                  name: common-configmap
                   key: ui-url
             - name: NEXTAUTH_SECRET
               valueFrom:
