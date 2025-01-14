@@ -24,17 +24,17 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: backend-service
+                name: ui-service
                 port:
                   name: 80-tcp
-          - path: /oauth2
+          - path: /api/user-info
             pathType: Prefix
             backend:
               service:
                 name: backend-service
                 port:
                   name: 80-tcp
-          - path: /login/oauth2
+          - path: /logout
             pathType: Prefix
             backend:
               service:
