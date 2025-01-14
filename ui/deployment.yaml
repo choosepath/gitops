@@ -22,50 +22,50 @@ spec:
           ports:
             - containerPort: 3000
           env:
-          - name: TZ
-            valueFrom:
-              configMapKeyRef:
-                name: common-configmap
-                key: timezone
-          - name: NEXT_TELEMETRY_DISABLED
-            valueFrom:
-              configMapKeyRef:
-                name: ui-configmap
-                key: nextTelemetry
-          - name: FORCE_COLOR
-            valueFrom:
-              configMapKeyRef:
-                name: ui-configmap
-                key: forceColor
-          - name: NODE_ENV
-            value: "production"
-          - name: NEXT_PUBLIC_DEPLOYED_ENVIRONMENT
-            valueFrom:
-              configMapKeyRef:
-                name: common-configmap
-                key: environment
-          - name: NEXTAUTH_URL
-            valueFrom:
-              configMapKeyRef:
-                name: ui-configmap
-                key: next-auth-url
-          - name: NEXTAUTH_SECRET
-            valueFrom:
-              configMapKeyRef:
-                name: ui-configmap
-                key: next-auth-secret
-          - name: NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
-            valueFrom:
-              configMapKeyRef:
-                name: common-configmap
-                key: google-maps-api-key
-          - name: NEXT_PUBLIC_CHOOSEPATH_AUTH_API_URL
-            valueFrom:
-              configMapKeyRef:
-                name: common-configmap
-                key: auth-service-url
-          - name: NEXT_PUBLIC_CHOOSEPATH_SERVICE_API_URL
-            valueFrom:
-              configMapKeyRef:
-                name: common-configmap
-                key: backend-service-url
+            - name: TZ
+              valueFrom:
+                configMapKeyRef:
+                  name: common-configmap
+                  key: timezone
+            - name: NEXT_TELEMETRY_DISABLED
+              valueFrom:
+                configMapKeyRef:
+                  name: ui-configmap
+                  key: nextTelemetry
+            - name: FORCE_COLOR
+              valueFrom:
+                configMapKeyRef:
+                  name: ui-configmap
+                  key: forceColor
+            - name: NODE_ENV
+              value: "production"
+            - name: NEXT_PUBLIC_DEPLOYED_ENVIRONMENT
+              valueFrom:
+                configMapKeyRef:
+                  name: common-configmap
+                  key: environment
+            - name: NEXTAUTH_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: ui-configmap
+                  key: next-auth-url
+            - name: NEXTAUTH_SECRET
+              valueFrom:
+                configMapKeyRef:
+                  name: ui-configmap
+                  key: next-auth-secret
+            - name: NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+              valueFrom:
+                configMapKeyRef:
+                  name: common-configmap
+                  key: google-maps-api-key
+            - name: NEXT_PUBLIC_CHOOSEPATH_AUTH_API_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: common-configmap
+                  key: auth-service-url
+            - name: NEXT_PUBLIC_CHOOSEPATH_SERVICE_API_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: common-configmap
+                  key: backend-service-url
