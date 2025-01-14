@@ -23,6 +23,7 @@ spec:
       labels:
         app: ui
         deployment: ui
+    spec:
       containers:
         - env:
             - name: TZ
