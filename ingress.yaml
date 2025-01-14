@@ -47,7 +47,7 @@ spec:
               service:
                 name: ui-service
                 port:
-                  name: 3000-tcp
+                  name: 80-tcp
 
   tls:
     - hosts:
