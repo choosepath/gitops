@@ -28,4 +28,12 @@ spec:
                   name: common-configmap
                   key: postgres-db-url
             - name: APP_BASE_URL
-              value: "https://choosepath.org"
+              valueFrom:
+                configMapKeyRef:
+                  name: common-configmap
+                  key: auth-service-url
+            - name: APP_SUCCESS_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: common-configmap
+                  key: auth-service-url
