@@ -15,4 +15,4 @@ data:
   backend-service-url: "https://choosepath.ddns.net/"
 
   # postgres db
-  postgres-db-url: "http://db-service.choosepath.svc.cluster.local:5432/choosepathdb"
+  postgres-db-url: "db:5432/choosepathdb"
