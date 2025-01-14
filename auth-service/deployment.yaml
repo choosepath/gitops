@@ -40,12 +40,12 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   name: common-configmap
-                  key: auth-service-url
+                  key: ui-url
             - name: APP_SUCCESS_URL
               valueFrom:
                 configMapKeyRef:
                   name: common-configmap
-                  key: auth-service-url
+                  key: ui-url
           image: auth-service-image
           imagePullPolicy: Always
           name: auth-service

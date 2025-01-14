@@ -49,7 +49,7 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   name: ui-configmap
-                  key: next-auth-url
+                  key: ui-url
             - name: NEXTAUTH_SECRET
               valueFrom:
                 configMapKeyRef:
@@ -64,7 +64,7 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   name: common-configmap
-                  key: auth-service-url
+                  key: ui-url
             - name: NEXT_PUBLIC_CHOOSEPATH_SERVICE_API_URL
               valueFrom:
                 configMapKeyRef:
