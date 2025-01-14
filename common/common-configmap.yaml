@@ -12,4 +12,4 @@ data:
 
   #  auth api
   auth-service-url: "https://choosepath.org"
-  backend-service-url: "http://backend-service"
+  backend-service-url: "https://choosepath.ddns.net/"
