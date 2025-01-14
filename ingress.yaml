@@ -26,21 +26,21 @@ spec:
               service:
                 name: backend-service
                 port:
-                  name: 8080-tcp
+                  name: 80-tcp
           - path: /oauth2
             pathType: Prefix
             backend:
               service:
                 name: backend-service
                 port:
-                  name: 8080-tcp
+                  name: 80-tcp
           - path: /login/oauth2
             pathType: Prefix
             backend:
               service:
                 name: backend-service
                 port:
-                  name: 8080-tcp
+                  name: 80-tcp
           - path: /
             pathType: Prefix
             backend:
