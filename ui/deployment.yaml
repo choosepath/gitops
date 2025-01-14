@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   labels:
     app: ui
-    deployment: ui
   name: ui
   namespace: choosepath
 spec:
@@ -12,7 +11,6 @@ spec:
   selector:
     matchLabels:
       app: ui
-      deployment: ui
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -22,7 +20,6 @@ spec:
     metadata:
       labels:
         app: ui
-        deployment: ui
     spec:
       containers:
         - env:
