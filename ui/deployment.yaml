@@ -69,7 +69,7 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   name: common-configmap
-                  key: project-service-url
+                  key: backend-service-url
           image: ui-image
           imagePullPolicy: Always
           name: ui
