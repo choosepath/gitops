@@ -1,27 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ui
-  namespace: choosepath
   labels:
     app: ui
+    deployment: ui
+  name: ui
+  namespace: choosepath
 spec:
   replicas: 1
+  revisionHistoryLimit: 1
   selector:
     matchLabels:
       app: ui
+      deployment: ui
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
   template:
     metadata:
       labels:
         app: ui
-    spec:
+        deployment: ui
       containers:
-        - name: ui
-          image: ui-image
-          imagePullPolicy: Always
-          ports:
-            - containerPort: 3000
-          env:
+        - env:
             - name: TZ
               valueFrom:
                 configMapKeyRef:
@@ -68,4 +71,43 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   name: common-configmap
-                  key: backend-service-url
+                  key: project-service-url
+          image: ui-image
+          imagePullPolicy: Always
+          name: ui
+          ports:
+            - name: http
+              protocol: TCP
+              containerPort: 3000
+          livenessProbe:
+            httpGet:
+              path: /api/health/liveness
+              port: http
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 20
+            timeoutSeconds: 3
+          readinessProbe:
+            httpGet:
+              path: /api/health/readiness
+              port: http
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 5
+            timeoutSeconds: 3
+          resources:
+            limits:
+              cpu: "1"
+              memory: 2Gi
+            requests:
+              cpu: 500m
+              memory: 1Gi
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
