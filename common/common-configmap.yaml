@@ -10,6 +10,9 @@ data:
   # google maps
   google-maps-api-key: "AIzaSyCrFkoy3GLop2K12MeTHY0hwwvj8M_LToY"
 
-  #  auth api
+  # auth api
   auth-service-url: "https://choosepath.org"
   backend-service-url: "https://choosepath.ddns.net/"
+
+  # postgres db
+  postgres-db-url: "http://db-service.choosepath.svc.cluster.local:5432/choosepathdb"
