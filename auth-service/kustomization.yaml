@@ -2,7 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1alpha1
 kind: Component
 
 images:
-  - name: backend-image
+  - name: auth-service-image
     newName: pavloskomple/backend
     newTag: v1.0
 

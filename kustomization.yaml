@@ -9,5 +9,5 @@ resources:
 components:
   - common
   - ui
-  - backend
+  - auth-service
   - db

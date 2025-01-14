@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend-service
+  name: auth-service-service
   labels:
-    app: backend
+    app: auth-service
 spec:
   type: ClusterIP
   ports:
@@ -12,4 +12,4 @@ spec:
       port: 80
       targetPort: 8080
   selector:
-    app: backend
+    app: auth-service
