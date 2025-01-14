@@ -23,6 +23,9 @@ spec:
             - containerPort: 8080
           env:
             - name: DB_URL
-              value: db:5432/choosepathdb
+              valueFrom:
+                configMapKeyRef:
+                  name: common-configmap
+                  key: postgres-db-url
             - name: APP_BASE_URL
               value: "https://choosepath.org"
