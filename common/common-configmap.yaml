@@ -10,8 +10,13 @@ data:
   # google maps
   google-maps-api-key: "AIzaSyCrFkoy3GLop2K12MeTHY0hwwvj8M_LToY"
 
-  # auth api
+  # ui
   ui-url: "https://choosepath.org"
+
+  # auth service
+  auth-service-url: auth-service-service:8080
+
+  # backend service
   backend-service-url: "https://choosepath.ddns.net/"
 
   # postgres db
