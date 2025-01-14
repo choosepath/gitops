@@ -3,8 +3,8 @@ kind: Component
 
 images:
   - name: ui-image
-    newName: pavloskomple/ui
-    newTag: v1.0
+    newName: cyberboy123/ui
+    newTag: 1.0.0
 
 resources:
   - configmap.yaml
