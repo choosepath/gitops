@@ -17,7 +17,7 @@ data:
   auth-service-url: auth-service-service:8080
 
   # backend service
-  backend-service-url: "https://choosepath.ddns.net/"
+  backend-service-url: "https://choosepath.ddns.net"
 
   # postgres db
   postgres-db-url: db-service:5432/choosepathdb
