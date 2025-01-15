@@ -22,7 +22,10 @@ spec:
         app: ui
     spec:
       containers:
-        - env:
+        - name: ui
+          image: ui-image
+          imagePullPolicy: Always
+          env:
             - name: TZ
               valueFrom:
                 configMapKeyRef:
@@ -70,9 +73,6 @@ spec:
                 configMapKeyRef:
                   name: common-configmap
                   key: backend-service-url
-          image: ui-image
-          imagePullPolicy: Always
-          name: ui
           ports:
             - name: http
               protocol: TCP
