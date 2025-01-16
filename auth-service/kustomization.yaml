@@ -3,7 +3,7 @@ kind: Component
 
 images:
   - name: auth-service-image
-    newName: pavloskomple/backend
+    newName: cyberboy123/auth-service
     newTag: 1.0.3
 
 resources:
