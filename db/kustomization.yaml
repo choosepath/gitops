@@ -12,4 +12,5 @@ resources:
   - service.yaml
   - spc.yaml
   - pvc-backup.yaml
+  - pv-backup.yaml
   - cronjob-backup.yaml
