@@ -21,18 +21,18 @@ spec:
       labels:
         app: ui
     spec:
-      volumes:
-        - configMap:
-            defaultMode: 420
-            items:
-              - key: .env
-                path: .env.local
-            name: env-local
-          name: env-local
       containers:
         - name: ui
           image: ui-image
           imagePullPolicy: Always
+          volumes:
+            - configMap:
+                defaultMode: 420
+                items:
+                  - key: .env
+                    path: .env.local
+                name: env-local
+              name: env-local
           volumeMounts:
             - mountPath: /app/.env.local
               name: env-local
