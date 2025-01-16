@@ -6,9 +6,6 @@ data:
   environment: prod
   timezone: Europe/Athens
 
-  # google maps
-  google-maps-api-key: "AIzaSyCrFkoy3GLop2K12MeTHY0hwwvj8M_LToY"
-
   # ui
   ui-url: "https://choosepath.org"
   auth-return-url: "https://choosepath.org/login"
