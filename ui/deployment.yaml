@@ -115,8 +115,8 @@ spec:
             items:
               - key: .env
                 path: .env.local
-            name: ui-configmap
-          name: ui-configmap
+            name: env-local
+          name: env-local
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
