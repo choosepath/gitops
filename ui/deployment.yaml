@@ -25,35 +25,22 @@ spec:
         - name: ui
           image: ui-image
           imagePullPolicy: Always
-          volumes:
-            - configMap:
-                defaultMode: 420
-                items:
-                  - key: .env
-                    path: .env.local
-                name: env-local
-              name: env-local
-          volumeMounts:
-            - mountPath: /app/.env.local
-              name: env-local
-              readOnly: true
-              subPath: .env.local
           env:
             - name: TZ
               valueFrom:
                 configMapKeyRef:
                   name: common-configmap
                   key: timezone
-            # - name: NEXT_TELEMETRY_DISABLED
-            #   valueFrom:
-            #     configMapKeyRef:
-            #       name: ui-configmap
-            #       key: nextTelemetry
-            # - name: FORCE_COLOR
-            #   valueFrom:
-            #     configMapKeyRef:
-            #       name: ui-configmap
-            #       key: forceColor
+            - name: NEXT_TELEMETRY_DISABLED
+              valueFrom:
+                configMapKeyRef:
+                  name: ui-configmap
+                  key: nextTelemetry
+            - name: FORCE_COLOR
+              valueFrom:
+                configMapKeyRef:
+                  name: ui-configmap
+                  key: forceColor
             - name: NODE_ENV
               value: "production"
             - name: NEXT_PUBLIC_DEPLOYED_ENVIRONMENT
@@ -66,11 +53,11 @@ spec:
                 configMapKeyRef:
                   name: common-configmap
                   key: ui-url
-            # - name: NEXTAUTH_SECRET
-            # valueFrom:
-            # configMapKeyRef:
-            # name: ui-configmap
-            # key: next-auth-secret
+            - name: NEXTAUTH_SECRET
+              valueFrom:
+              configMapKeyRef:
+                name: ui-configmap
+                key: next-auth-secret
             - name: NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
               valueFrom:
                 configMapKeyRef:
