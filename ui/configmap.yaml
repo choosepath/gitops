@@ -8,8 +8,9 @@
 #   next-auth-secret: "1h3ALC6cWwiKa56tJFySMnLWVckOz1qI96MJHf0/BMs="
 
 apiVersion: v1
-name: env-local
+kind: ConfigMap
+metadata:
+  name: env-local
 data:
   .env: |-
     NEXT_PUBLIC_CHOOSEPATH_AUTH_API_URL=ui-url
-kind: ConfigMap
