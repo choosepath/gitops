@@ -63,6 +63,8 @@ spec:
                 configMapKeyRef:
                   name: common-configmap
                   key: backend-service-url
+            - name: NEXTAUTH_SECRET
+              value: "test"
           ports:
             - name: http
               protocol: TCP
