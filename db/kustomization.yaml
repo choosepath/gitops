@@ -11,3 +11,5 @@ resources:
   - deployment.yaml
   - service.yaml
   - spc.yaml
+  - pvc-backup.yaml
+  - cronjob-backup.yaml
