@@ -10,7 +10,7 @@ data:
 
   # ui
   ui-url: "https://choosepath.org"
-  auth-return-url: "https://choosepath.org/login"
+  auth-return-url: "https://choosepath.org"
 
   # auth service
   auth-service-url: auth-service-service:8080
