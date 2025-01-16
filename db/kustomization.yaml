@@ -1,6 +1,11 @@
 apiVersion: kustomize.config.k8s.io/v1alpha1
 kind: Component
 
+images:
+  - name: db-image
+    newName: postgis/postgis
+    newTag: latest
+
 resources:
   - pvc.yaml
   - deployment.yaml

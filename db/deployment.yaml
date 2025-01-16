@@ -17,9 +17,8 @@ spec:
     spec:
       containers:
         - name: postgis
-          image: postgis/postgis
-          ports:
-            - containerPort: 5432
+          image: db-image
+          imagePullPolicy: IfNotPresent
           env:
             - name: POSTGRES_DB
               valueFrom:
@@ -39,7 +38,55 @@ spec:
           volumeMounts:
             - name: postgis-data
               mountPath: /var/lib/postgresql/data
+          ports:
+            - containerPort: 5432
+              livenessProbe:
+                exec:
+                  command:
+                    - pg_isready
+                    - -U
+                    - postgres
+                initialDelaySeconds: 5
+                periodSeconds: 10
+                successThreshold: 1
+                failureThreshold: 20
+                timeoutSeconds: 3
+              readinessProbe:
+                exec:
+                  command:
+                    - pg_isready
+                    - -U
+                    - postgres
+                initialDelaySeconds: 5
+                periodSeconds: 10
+                successThreshold: 1
+                failureThreshold: 5
+                timeoutSeconds: 3
+              resources:
+                limits:
+                  cpu: 1
+                  memory: 2Gi
+                requests:
+                  cpu: 500m
+                  memory: 1Gi
       volumes:
         - name: postgis-data
           persistentVolumeClaim:
             claimName: postgis-pvc
+      # initContainers:
+      #   - name: init-db
+      #     image: postgres:15
+      #     imagePullPolicy: IfNotPresent
+      #     command:
+      #       - sh
+      #       - -c
+      #       - |
+      #         if [ -z "$(ls -A /var/lib/postgresql/data)" ]; then
+      #           echo "Initializing database..."
+      #           initdb -D /var/lib/postgresql/data
+      #         else
+      #           echo "Data directory is not empty. Skipping initialization."
+      #         fi
+      #     volumeMounts:
+      #       - name: postgis-data
+      #         mountPath: /var/lib/postgresql/data
