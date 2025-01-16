@@ -45,7 +45,7 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   name: common-configmap
-                  key: ui-url
+                  key: auth-return-url
           image: auth-service-image
           imagePullPolicy: Always
           name: auth-service
