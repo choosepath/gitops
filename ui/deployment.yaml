@@ -48,16 +48,6 @@ spec:
                 configMapKeyRef:
                   name: common-configmap
                   key: environment
-            - name: NEXTAUTH_URL
-              valueFrom:
-                configMapKeyRef:
-                  name: common-configmap
-                  key: ui-url
-            - name: NEXTAUTH_SECRET
-              valueFrom:
-              configMapKeyRef:
-                name: ui-configmap
-                key: next-auth-secret
             - name: NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
               valueFrom:
                 configMapKeyRef:
@@ -73,8 +63,6 @@ spec:
                 configMapKeyRef:
                   name: common-configmap
                   key: backend-service-url
-            - name: NEXT_PUBLIC_ENV_KEY
-              value: "test"
           ports:
             - name: http
               protocol: TCP
