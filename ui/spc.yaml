@@ -5,3 +5,4 @@ metadata:
 type: Opaque
 data:
   google-maps-api-key: QUl6YVN5Q3JGa295M0dMb3AySzEyTWVUSFkwaHd3dmo4TV9MVG9Z
+  next-auth-secret: MWgzQUxDNmNXd2lLYTU2dEpGeVNNbkxXVmNrT3oxcUk5Nk1KSGYwL0JNcz0=
