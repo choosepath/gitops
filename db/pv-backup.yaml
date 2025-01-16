@@ -9,6 +9,6 @@ spec:
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: standard # This should match the PVC's storage class
+  storageClassName: standard
   hostPath:
     path: /mnt/data/postgres-backup # Path on the node (use a suitable directory)
