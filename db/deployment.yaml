@@ -24,9 +24,15 @@ spec:
             - name: POSTGRES_DB
               value: "choosepathdb"
             - name: POSTGRES_USER
-              value: "postgres"
+              valueFrom:
+                secretKeyRef:
+                  name: db-secrets
+                  key: user
             - name: POSTGRES_PASSWORD
-              value: "postgres"
+              valueFrom:
+                secretKeyRef:
+                  name: db-secrets
+                  key: password
           volumeMounts:
             - name: postgis-data
               mountPath: /var/lib/postgresql/data
