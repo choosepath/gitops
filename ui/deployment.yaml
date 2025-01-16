@@ -21,6 +21,14 @@ spec:
       labels:
         app: ui
     spec:
+      volumes:
+        - configMap:
+            defaultMode: 420
+            items:
+              - key: .env
+                path: .env.local
+            name: env-local
+          name: env-local
       containers:
         - name: ui
           image: ui-image
@@ -109,14 +117,6 @@ spec:
               memory: 1Gi
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
-      volumes:
-        - configMap:
-            defaultMode: 420
-            items:
-              - key: .env
-                path: .env.local
-            name: env-local
-          name: env-local
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
