@@ -22,7 +22,10 @@ spec:
             - containerPort: 5432
           env:
             - name: POSTGRES_DB
-              value: "choosepathdb"
+              valueFrom:
+                configMapKeyRef:
+                  name: common-configmap
+                  key: postgres-db
             - name: POSTGRES_USER
               valueFrom:
                 secretKeyRef:

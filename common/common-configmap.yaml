@@ -18,3 +18,4 @@ data:
 
   # postgres db
   postgres-db-url: db-service:5432/choosepathdb
+  postgres-db: choosepathdb
