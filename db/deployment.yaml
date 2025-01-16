@@ -73,20 +73,3 @@ spec:
         - name: postgis-data
           persistentVolumeClaim:
             claimName: postgis-pvc
-      # initContainers:
-      #   - name: init-db
-      #     image: postgres:15
-      #     imagePullPolicy: IfNotPresent
-      #     command:
-      #       - sh
-      #       - -c
-      #       - |
-      #         if [ -z "$(ls -A /var/lib/postgresql/data)" ]; then
-      #           echo "Initializing database..."
-      #           initdb -D /var/lib/postgresql/data
-      #         else
-      #           echo "Data directory is not empty. Skipping initialization."
-      #         fi
-      #     volumeMounts:
-      #       - name: postgis-data
-      #         mountPath: /var/lib/postgresql/data
