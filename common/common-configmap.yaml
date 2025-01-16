@@ -3,6 +3,7 @@ kind: ConfigMap
 metadata:
   name: common-configmap
 data:
+  environment: prod
   timezone: Europe/Athens
 
   # google maps
@@ -10,7 +11,7 @@ data:
 
   # ui
   ui-url: "https://choosepath.org"
-  auth-return-url: "https://choosepath.org"
+  auth-return-url: "https://choosepath.org/login"
 
   # auth service
   auth-service-url: auth-service-service:8080
