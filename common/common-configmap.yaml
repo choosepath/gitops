@@ -4,8 +4,6 @@ metadata:
   name: common-configmap
 data:
   timezone: Europe/Athens
-  node-tls: "0"
-  environment: "prod"
 
   # google maps
   google-maps-api-key: "AIzaSyCrFkoy3GLop2K12MeTHY0hwwvj8M_LToY"

@@ -31,18 +31,6 @@ spec:
                 configMapKeyRef:
                   name: common-configmap
                   key: timezone
-            - name: NEXT_TELEMETRY_DISABLED
-              valueFrom:
-                configMapKeyRef:
-                  name: ui-configmap
-                  key: nextTelemetry
-            - name: FORCE_COLOR
-              valueFrom:
-                configMapKeyRef:
-                  name: ui-configmap
-                  key: forceColor
-            - name: NODE_ENV
-              value: "production"
           ports:
             - name: http
               protocol: TCP
