@@ -27,13 +27,6 @@ spec:
                 name: ui-service
                 port:
                   name: 80-tcp
-          - path: /api/auth
-            pathType: Prefix
-            backend:
-              service:
-                name: ui-service
-                port:
-                  name: 80-tcp
           - path: /api/user-info
             pathType: Prefix
             backend:
