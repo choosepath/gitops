@@ -4,7 +4,7 @@ kind: Component
 images:
   - name: auth-service-image
     newName: pavloskomple/backend
-    newTag: v1.0
+    newTag: 1.0.3
 
 resources:
   - deployment.yaml
