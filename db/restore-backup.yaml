@@ -12,10 +12,9 @@ spec:
             - /bin/sh
             - -c
             - |
-              ls -lah
               echo "Restoring database from backup file $BACKUP_FILE..."
               export PGPASSWORD=$POSTGRES_PASSWORD
-              psql \
+              pg_restore \
               -h $DB_HOST \
               -U $POSTGRES_USER \
               -d $POSTGRES_DB \
