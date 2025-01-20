@@ -3,6 +3,7 @@ kind: Job
 metadata:
   name: postgres-restore
 spec:
+  replicas: 0
   template:
     spec:
       containers:
