@@ -3,6 +3,8 @@ kind: CronJob
 metadata:
   name: postgres-backup
 spec:
+  successfulJobsHistoryLimit: 7
+  failedJobsHistoryLimit: 0
   schedule: "0 0 1,15 * *" # Runs At 00:00 on day-of-month 1 and 15.
   jobTemplate:
     spec:
