@@ -43,10 +43,10 @@ spec:
                   name: db-secrets
                   key: password
           volumeMounts:
-            - name: backup-volume
+            - name: backup-storage
               mountPath: /backup
       volumes:
-        - name: backup-volume
+        - name: backup-storage
           persistentVolumeClaim:
             claimName: db-backup-pvc
       restartPolicy: OnFailure
