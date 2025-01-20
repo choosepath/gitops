@@ -35,7 +35,12 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   name: common-configmap
-                  key: postgres-db-url
+                  key: postgres-db-host
+            - name: DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: common-configmap
+                  key: postgres-db
             - name: APP_BASE_URL
               valueFrom:
                 configMapKeyRef:

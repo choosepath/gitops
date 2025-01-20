@@ -17,7 +17,7 @@ spec:
                 - |
                   mkdir -p /backup/$(date +%F)
                   PGPASSWORD=$POSTGRES_PASSWORD pg_dump \
-                    -h db-service.choosepath.svc.cluster.local \
+                    -h $DB_HOST \
                     -U $POSTGRES_USER \
                     -d $POSTGRES_DB \
                     -F c > /backup/$(date +%F)/backup.sql
@@ -25,10 +25,15 @@ spec:
                   echo "Backup completed at $(date)"
 
                   # Cleanup old backups (older than 60 days)
-                  find /backups -type f -name "*.sql" -mtime +60 -exec rm -f {} \;
+                  find /backup -type f -name "*.sql" -mtime +60 -exec rm -f {} \;
 
                   echo "Cleanup completed."
               env:
+                - name: DB_HOST
+                  valueFrom:
+                    configMapKeyRef:
+                      name: common-configmap
+                      key: postgres-db-host
                 - name: POSTGRES_DB
                   valueFrom:
                     configMapKeyRef:
