@@ -19,14 +19,14 @@ spec:
                 -h $DB_HOST \
                 -U $POSTGRES_USER \
                 -d $POSTGRES_DB \
-                /backup/$BACKUP_FILE
+                $BACKUP_FILE
               else
                 echo "Backup file not found: $BACKUP_FILE"
                 exit 1
               fi
           env:
             - name: BACKUP_FILE
-              value: "2025-01-20/backup.sql"
+              value: "/backup/2025-01-20/backup.sql"
             - name: DB_HOST
               valueFrom:
                 configMapKeyRef:

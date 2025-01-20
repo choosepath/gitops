@@ -4,7 +4,7 @@
 
 ```bash
 - name: BACKUP_FILE
-  value: "2025-01-20/backup.sql"
+  value: "/backup/2025-01-20/backup.sql"
 ```
 
 2. Run the job from the ArgoCD UI
