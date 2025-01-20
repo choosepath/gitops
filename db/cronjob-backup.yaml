@@ -17,7 +17,7 @@ spec:
                 - |
                   mkdir -p /backup/$(date +%F)
                   PGPASSWORD=$POSTGRES_PASSWORD pg_dump \
-                    -h db-service:5432 \
+                    -h db-service.choosepath.svc.cluster.local \
                     -U $POSTGRES_USER \
                     -d $POSTGRES_DB \
                     -F c > /backup/$(date +%F)/backup.sql

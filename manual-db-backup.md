@@ -5,3 +5,5 @@
 ```bash
  sudo kubectl create job --from=cronjob/postgres-backup manual-backup-job
 ```
+
+2. Or use the ArgoCD UI
