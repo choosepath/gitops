@@ -55,4 +55,4 @@ spec:
         - name: backup-storage
           persistentVolumeClaim:
             claimName: db-backup-pvc
-      restartPolicy: OnFailure
+      restartPolicy: Never
