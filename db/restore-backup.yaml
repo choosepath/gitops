@@ -3,6 +3,8 @@ kind: Job
 metadata:
   name: postgres-restore
 spec:
+  backoffLimit: 0 # Prevent retries
+  activeDeadlineSeconds: 60 # Timeout the Job after 60 seconds
   template:
     spec:
       containers:
