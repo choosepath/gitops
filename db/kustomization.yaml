@@ -14,4 +14,4 @@ resources:
   - pvc-backup.yaml
   - pv-backup.yaml
   - cronjob-backup.yaml
-  - restore-backup.yaml
+  # - restore-backup.yaml
