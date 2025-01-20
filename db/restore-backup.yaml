@@ -1,0 +1,52 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: postgres-restore
+spec:
+  template:
+    spec:
+      containers:
+        - name: postgres-restore
+          image: db-image
+          args:
+            - /bin/sh
+            - -c
+            - |
+              echo "Restoring database from backup file $BACKUP_FILE..."
+              # Run the restore command from the PVC
+              PGPASSWORD=$POSTGRES_PASSWORD psql \
+                -h $DB_HOST \
+                -U $POSTGRES_USER \
+                -d $POSTGRES_DB \ 
+                -f /backup/$BACKUP_FILE
+          env:
+            - name: BACKUP_FILE
+              value: "2025-01-20/backup.sql"
+            - name: DB_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: common-configmap
+                  key: postgres-db-host
+            - name: POSTGRES_DB
+              valueFrom:
+                configMapKeyRef:
+                  name: common-configmap
+                  key: postgres-db
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: db-secrets
+                  key: user
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: db-secrets
+                  key: password
+          volumeMounts:
+            - name: backup-volume
+              mountPath: /backup
+      volumes:
+        - name: backup-volume
+          persistentVolumeClaim:
+            claimName: db-backup-pvc
+      restartPolicy: OnFailure
