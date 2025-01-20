@@ -22,7 +22,7 @@ spec:
                     -d $POSTGRES_DB \
                     -F c > /backup/$(date +%F)/backup.sql
 
-                  echo "Backup completed at $(date)"
+                  echo "Backup completed at $(date +%F)"
 
                   # Cleanup old backups (older than 60 days)
                   find /backup -type f -name "*.sql" -mtime +60 -exec rm -f {} \;
