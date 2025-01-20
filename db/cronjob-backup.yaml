@@ -21,7 +21,13 @@ spec:
                     -U $POSTGRES_USER \
                     -d $POSTGRES_DB \
                     -F c > /backup/$(date +%F)/backup.sql
+
                   echo "Backup completed at $(date)"
+
+                  # Cleanup old backups (older than 60 days)
+                  find /backups -type f -name "*.sql" -mtime +60 -exec rm -f {} \;
+
+                  echo "Cleanup completed."
               env:
                 - name: POSTGRES_DB
                   valueFrom:
