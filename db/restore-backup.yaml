@@ -13,9 +13,8 @@ spec:
             - -c
             - |
               echo "Restoring database from backup file $BACKUP_FILE..."
-              # Run the restore command from the PVC
-              PGPASSWORD=$POSTGRES_PASSWORD psql \
-                -h $DB_HOST \
+              export PGPASSWORD=$POSTGRES_PASSWORD
+              psql \
                 -U $POSTGRES_USER \
                 -d $POSTGRES_DB \ 
                 -f /backup/$BACKUP_FILE
