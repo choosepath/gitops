@@ -15,9 +15,10 @@ spec:
               echo "Restoring database from backup file $BACKUP_FILE..."
               export PGPASSWORD=$POSTGRES_PASSWORD
               psql \
-                -U $POSTGRES_USER \
-                -d $POSTGRES_DB \ 
-                -f /backup/$BACKUP_FILE
+              -h $DB_HOST \
+              -U $POSTGRES_USER \
+              -d $POSTGRES_DB \
+              -f /backup/$BACKUP_FILE
           env:
             - name: BACKUP_FILE
               value: "2025-01-20/backup.sql"
