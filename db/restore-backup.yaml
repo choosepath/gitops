@@ -19,7 +19,7 @@ spec:
                 -h $DB_HOST \
                 -U $POSTGRES_USER \
                 -d $POSTGRES_DB \
-                -f /backup/$BACKUP_FILE
+                /backup/$BACKUP_FILE
               else
                 echo "Backup file not found: $BACKUP_FILE"
                 exit 1
