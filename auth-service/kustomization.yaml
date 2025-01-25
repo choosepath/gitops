@@ -4,7 +4,7 @@ kind: Component
 images:
   - name: auth-service-image
     newName: cyberboy123/auth-service-develop
-    newTag: latest-20250125
+    newTag: latest-20250125-123938
 
 resources:
   - deployment.yaml
