@@ -5,7 +5,7 @@ metadata:
     app: auth-service
     deployment: auth-service
   name: auth-service
-  namespace: choosepath
+  namespace: choosepath-develop
 spec:
   replicas: 1
   revisionHistoryLimit: 1
