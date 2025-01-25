@@ -17,7 +17,7 @@ metadata:
     nginx.ingress.kubernetes.io/gzip_min_length: 256
 spec:
   rules:
-    - host: choosepath.org
+    - host: choosepath-develop.org
       http:
         paths:
           - path: /
@@ -57,5 +57,5 @@ spec:
                   name: 80-tcp
   tls:
     - hosts:
-        - choosepath.org
+        - choosepath-develop.org
       secretName: choosepath-org-tls

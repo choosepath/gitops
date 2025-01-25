@@ -3,7 +3,7 @@ kind: Component
 
 images:
   - name: ui-image
-    newName: cyberboy123/ui
+    newName: cyberboy123/ui-develop
     newTag: 1.0.61
 
 resources:

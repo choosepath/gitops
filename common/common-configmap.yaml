@@ -7,8 +7,8 @@ data:
   timezone: Europe/Athens
 
   # ui
-  ui-url: "https://choosepath.org"
-  auth-return-url: "https://choosepath.org/login"
+  ui-url: "https://choosepath-develop.org"
+  auth-return-url: "https://choosepath-develop.org/login"
 
   # auth service
   auth-service-url: auth-service-service:8080
@@ -17,5 +17,5 @@ data:
   backend-service-url: "https://choosepath.ddns.net"
 
   # postgres db
-  postgres-db-host: db-service.choosepath.svc.cluster.local
+  postgres-db-host: db-service.choosepath-develop.svc.cluster.local
   postgres-db: choosepathdb
