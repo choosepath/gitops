@@ -2,6 +2,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: postgres-restore
+  namespace: choosepath
 spec:
   suspend: true
   backoffLimit: 0 # Prevent retries
