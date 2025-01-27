@@ -18,5 +18,5 @@ data:
   backend-service-url: "https://choosepath.ddns.net"
 
   # postgres db
-  postgres-db-host: db-service.default.svc.cluster.local
+  postgres-db-host: db-develop-service.default.svc.cluster.local
   postgres-db: choosepathdb
