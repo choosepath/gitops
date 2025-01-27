@@ -12,7 +12,7 @@ data:
   auth-return-url: "https://develop.choosepath.org/login"
 
   # auth service
-  auth-service-url: auth-service-service:8080
+  auth-service-url: auth-develop-service-service:8080
 
   # backend service
   backend-service-url: "https://choosepath.ddns.net"
