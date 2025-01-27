@@ -5,7 +5,7 @@ metadata:
 spec:
   acme:
     # The server URL for the ACME provider
-    server: https://acme-staging-v02.api.letsencrypt.org/directory
+    server: https://acme-v02.api.letsencrypt.org/directory
     # Your ACME account email address
     email: pavloskapoutsis@gmail.com
     privateKeySecretRef:
