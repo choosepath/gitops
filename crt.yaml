@@ -1,7 +1,7 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: develop-choosepath-cert
+  name: develop-choosepath-org-tls
   namespace: default
 spec:
   secretName: develop-choosepath-tls

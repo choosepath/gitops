@@ -5,6 +5,8 @@ namespace: default
 
 resources:
   - ingress.yaml
+  - crt.yaml
+  - clusterIssuer.yaml
 
 components:
   - common
