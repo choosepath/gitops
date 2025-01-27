@@ -58,4 +58,4 @@ spec:
   tls:
     - hosts:
         - choosepath.org
-      secretName: choosepath-org-tls
+      secretName: prod-choosepath-org-tls
