@@ -2,6 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: ui-configmap
+  namespace: default
 data:
   nextTelemetry: "1"
   forceColor: "1"
