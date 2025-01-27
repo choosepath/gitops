@@ -7,8 +7,8 @@ data:
   timezone: Europe/Athens
 
   # ui
-  ui-url: "https://choosepath-develop.org"
-  auth-return-url: "https://choosepath-develop.org/login"
+  ui-url: "https://develop.choosepath.org"
+  auth-return-url: "https://develop.choosepath.org/login"
 
   # auth service
   auth-service-url: auth-service-service:8080
