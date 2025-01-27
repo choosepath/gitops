@@ -6,7 +6,6 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-develop"
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
-    traefik.ingress.kubernetes.io/router.middlewares: default-gzip-compression@kubernetescrd
 spec:
   rules:
     - host: develop.choosepath.org

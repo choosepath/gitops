@@ -7,7 +7,6 @@ resources:
   - ingress.yaml
   - crt.yaml
   - clusterIssuer.yaml
-  - traefik-middleware.yaml
 
 components:
   - common
