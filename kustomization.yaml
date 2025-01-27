@@ -6,6 +6,7 @@ namespace: choosepath
 resources:
   - ingress.yaml
   - clusterIssuer.yaml
+  - cert.yaml
 
 components:
   - common
