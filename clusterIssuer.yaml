@@ -9,7 +9,7 @@ spec:
     # Your ACME account email address
     email: pavloskapoutsis@gmail.com
     privateKeySecretRef:
-      name: letsencrypt-prod
+      name: letsencrypt-develop
     solvers:
       - http01:
           ingress:
