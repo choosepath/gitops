@@ -5,3 +5,8 @@ metadata:
   namespace: default
 spec:
   compress: {}
+  buffering:
+    maxRequestBodyBytes: 52428800 # 10 MB in bytes
+    maxResponseBodyBytes: 52428800 # 10 MB in bytes
+    memRequestBodyBytes: 2097152 # 2 MB in memory before buffering to disk
+    memResponseBodyBytes: 2097152 # 2 MB in memory for responses
