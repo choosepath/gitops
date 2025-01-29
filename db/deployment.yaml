@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: db
-  namespace: default
+  namespace: choosepath-develop
   labels:
     app: db
 spec:

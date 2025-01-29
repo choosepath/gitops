@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: db-develop-service
-  namespace: default
+  name: db-service
+  namespace: choosepath-develop
   labels:
     app: db
 spec:

@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: choosepath-develop-ing
-  namespace: default
+  namespace: choosepath-develop
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-develop"
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
@@ -18,35 +18,35 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: ui-develop-service
+                name: ui-service
                 port:
                   name: 80-tcp
           - path: /api/user-info
             pathType: Prefix
             backend:
               service:
-                name: auth-develop-service-service
+                name: auth-service-service
                 port:
                   name: 80-tcp
           - path: /login/oauth2
             pathType: Prefix
             backend:
               service:
-                name: auth-develop-service-service
+                name: auth-service-service
                 port:
                   name: 80-tcp
           - path: /oauth2
             pathType: Prefix
             backend:
               service:
-                name: auth-develop-service-service
+                name: auth-service-service
                 port:
                   name: 80-tcp
           - path: /logout
             pathType: Prefix
             backend:
               service:
-                name: auth-develop-service-service
+                name: auth-service-service
                 port:
                   name: 80-tcp
   tls:

@@ -4,7 +4,7 @@ metadata:
   labels:
     app: ui
   name: ui
-  namespace: default
+  namespace: choosepath-develop
 spec:
   replicas: 1
   revisionHistoryLimit: 1

@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: ui-develop-service
-  namespace: default
+  name: ui-service
+  namespace: choosepath-develop
   labels:
     app: ui
 spec:
