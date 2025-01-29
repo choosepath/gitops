@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: common-configmap
+  name: common-configmap-develop
   namespace: default
 data:
   environment: prod
