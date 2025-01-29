@@ -23,7 +23,7 @@ spec:
             - name: POSTGRES_DB
               valueFrom:
                 configMapKeyRef:
-                  name: common-configmap-develop
+                  name: common-configmap
                   key: postgres-db
             - name: POSTGRES_USER
               valueFrom:

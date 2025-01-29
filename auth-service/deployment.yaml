@@ -29,27 +29,27 @@ spec:
             - name: TZ
               valueFrom:
                 configMapKeyRef:
-                  name: common-configmap-develop
+                  name: common-configmap
                   key: timezone
             - name: DB_URL
               valueFrom:
                 configMapKeyRef:
-                  name: common-configmap-develop
+                  name: common-configmap
                   key: postgres-db-host
             - name: DB_NAME
               valueFrom:
                 configMapKeyRef:
-                  name: common-configmap-develop
+                  name: common-configmap
                   key: postgres-db
             - name: APP_BASE_URL
               valueFrom:
                 configMapKeyRef:
-                  name: common-configmap-develop
+                  name: common-configmap
                   key: ui-url
             - name: APP_SUCCESS_URL
               valueFrom:
                 configMapKeyRef:
-                  name: common-configmap-develop
+                  name: common-configmap
                   key: auth-return-url
           image: auth-service-image
           imagePullPolicy: Always
