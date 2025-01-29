@@ -8,6 +8,7 @@ metadata:
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
     traefik.ingress.kubernetes.io/service-healthcheck-path: /api/health/liveness
     traefik.ingress.kubernetes.io/service-healthcheck-interval: 10s
+    traefik.ingress.kubernetes.io/service.passhostheader: "true"
 spec:
   rules:
     - host: develop.choosepath.org
