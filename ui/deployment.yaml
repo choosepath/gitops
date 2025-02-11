@@ -61,6 +61,11 @@ spec:
                 configMapKeyRef:
                   name: common-configmap
                   key: backend-service-url
+            - name: NEXT_PUBLIC_DEPLOYED_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: common-configmap
+                  key: ui-url
             - name: NEXTAUTH_SECRET
               valueFrom:
                 secretKeyRef:
