@@ -26,6 +26,8 @@ spec:
           image: ui-image
           imagePullPolicy: Always
           env:
+            - name: NODE_TLS_REJECT_UNAUTHORIZED
+              value: "0"
             - name: TZ
               valueFrom:
                 configMapKeyRef:
