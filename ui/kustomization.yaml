@@ -4,7 +4,7 @@ kind: Component
 images:
   - name: ui-image
     newName: cyberboy123/ui-develop
-    newTag: latest-20250403-090004
+    newTag: latest-20250404-143358
 
 resources:
   - configmap.yaml
