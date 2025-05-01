@@ -5,7 +5,7 @@ namespace: choosepath-develop
 
 resources:
   - ingress.yaml
-  - crt.yaml
+  - cert.yaml
   - clusterIssuer.yaml
 
 components:
